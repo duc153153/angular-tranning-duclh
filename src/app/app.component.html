@@ -1,0 +1,43 @@
+<mat-card>
+  <mat-card-content>
+    <div style="margin-bottom: 20px;">
+      <button mat-raised-button type="button" (click)="openCreateDialog()"> Create </button>
+    </div>
+    <div style="width: 100%; border: 1px solid black; margin-bottom: 20px;">
+      <mat-form-field style="width:220px; margin: 5px">
+        <input matInput placeholder="search last_name" (keydown.enter)="getAllAccount({last_name : $event.target.value})">
+      </mat-form-field>
+      <mat-form-field style="width:220px; margin: 5px">
+        <input matInput placeholder="search first_name" (keydown.enter)="getAllAccount({first_name : $event.target.value})">
+      </mat-form-field>
+      <mat-form-field style="width:220px; margin: 5px">
+        <input matInput placeholder="search address" (keydown.enter)="getAllAccount({address : $event.target.value})">
+      </mat-form-field>
+      <mat-form-field style="width:220px; margin: 5px">
+        <input matInput placeholder="search email" (keydown.enter)="getAllAccount({email : $event.target.value})">
+      </mat-form-field>
+      <mat-form-field style="width:220px; margin: 5px">
+        <mat-select (selectionChange)="getAllAccount({gender: $event.value})" placeholder="Gender">
+          <mat-option [value]="'M'">M</mat-option>
+          <mat-option [value]="'F'">F</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div style="width: 100%; border: 1px solid black">
+      <mat-select style="width:300px; margin: 10px" (selectionChange)="changePageMode($event.value)" [value]="'paging'">
+        <mat-option *ngFor="let mode of pageModeList" [value]="mode">
+          {{mode}}
+        </mat-option>
+      </mat-select>
+    </div>
+    <app-table 
+    [columns]="columns"
+    [rows]="account"
+    [totalRows]="total"
+    (isLoaded)="getAllAccount($event)"
+    [isLoading]="isLoading"
+    [pagingMode]="pageMode"
+    (updateAccount)="do($event)"
+    ></app-table>
+  </mat-card-content>
+</mat-card>

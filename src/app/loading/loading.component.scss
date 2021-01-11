@@ -1,0 +1,100 @@
+
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  z-index: 1010;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 14px;
+  color: #666;
+  text-transform: none;
+  &.small {
+    min-height: 80px;
+    .fa {
+      font-size: 24px;
+    }
+  }
+  &.no-bg {
+    background-color: transparent;
+    .loading {
+      background-color: transparent;
+    }
+    .loading-simple {
+      background-color: transparent;
+    }
+  }
+
+  &.blur {
+    .loading-simple {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &.has-background {
+    background-color: rgba(0, 0, 0, 0.2);
+    &.has-background-light {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .loading {
+    background-color: #fff;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+  }
+
+  &.fixed {
+    position: fixed;
+  }
+
+  &.block {
+    position: static;
+  }
+
+  &.no-height {
+    min-height: 80px;
+  }
+
+  &.icon-only {
+    &.icon-small {
+      .m-loader::before {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+    .text {
+      display: none;
+    }
+    .m-blockui {
+      background: transparent;
+      box-shadow: none;
+    }
+    .m-loader::before {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+
+  .fa {
+    font-size: 40px;
+  }
+}
+
+.loading-simple {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  z-index: 100;
+  opacity: 0.8;
+}

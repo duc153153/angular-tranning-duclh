@@ -1,0 +1,74 @@
+<form [formGroup]="form" (ngSubmit)="update()" *ngIf="form">
+    <div>
+        <mat-form-field style="width:100%">
+
+            <input matInput placeholder="Account Number" formControlName="account_number">
+            <mat-error *ngIf="form.get('account_number')?.hasError('required')">This field is required!
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+
+            <input matInput placeholder="balance" type='number' min='0' formControlName="balance">
+            <mat-error *ngIf="form.get('balance')?.hasError('required')">This field is required!
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+
+            <input matInput placeholder="age" type='number' min='1' formControlName="age">
+            <mat-error *ngIf="form.get('age')?.hasError('required')">This field is required!
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+
+            <input matInput placeholder="firstname" formControlName="firstname">
+            <mat-error *ngIf="form.get('firstname')?.hasError('required')">This field is required!
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+
+            <input matInput placeholder="lastname" formControlName="lastname">
+            <mat-error *ngIf="form.get('lastname')?.hasError('required')">This field is required!
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+            <mat-select formControlName="gender" placeholder="gender">
+                <mat-option [value]="'M'">M</mat-option>
+                <mat-option [value]="'F'">F</mat-option>
+              </mat-select>
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+
+            <input matInput placeholder="address" formControlName="address">
+            <mat-error *ngIf="form.get('address')?.hasError('required')">This field is required!
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+
+            <input matInput placeholder="employer" formControlName="employer">
+            <mat-error *ngIf="form.get('employer')?.hasError('required')">This field is required!
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+
+            <input matInput placeholder="email" formControlName="email">
+            <mat-error *ngIf="form.get('email')?.hasError('required')">This field is required!
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+            <input matInput placeholder="city" formControlName="city">
+            <mat-error *ngIf="form.get('city')?.hasError('required')">This field is required!
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+            <input matInput placeholder="state" formControlName="state">
+            <mat-error *ngIf="form.get('state')?.hasError('required')">This field is required!
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <button style="margin-top: 20px; float:right" color="primary" mat-raised-button type="submit" [disabled]="form.invalid">
+            Update
+        </button>
+    </div>
+</form>
