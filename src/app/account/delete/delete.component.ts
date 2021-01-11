@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { AccountService } from 'src/app/core/services/account.service';
+import { AccountService } from 'app/core/services/account.service';
 
 @Component({
   selector: 'app-delete',
