@@ -49,9 +49,11 @@
             </mat-error>
         </mat-form-field>
         <mat-form-field style="width:100%">
-
-            <input matInput placeholder="email" formControlName="email">
+            <input matInput placeholder="email" formControlName="email"
+                pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
             <mat-error *ngIf="form.get('email')?.hasError('required')">This field is required!
+            </mat-error>
+            <mat-error *ngIf="form.get('email')?.hasError('pattern')">Email invalid!
             </mat-error>
         </mat-form-field>
         <mat-form-field style="width:100%">

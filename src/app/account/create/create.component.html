@@ -34,7 +34,7 @@
             <mat-select formControlName="gender" placeholder="gender">
                 <mat-option [value]="'M'">M</mat-option>
                 <mat-option [value]="'F'">F</mat-option>
-              </mat-select>
+            </mat-select>
         </mat-form-field>
         <mat-form-field style="width:100%">
 
@@ -49,9 +49,11 @@
             </mat-error>
         </mat-form-field>
         <mat-form-field style="width:100%">
-
-            <input matInput placeholder="email" formControlName="email">
+            <input matInput placeholder="email" formControlName="email"
+                pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
             <mat-error *ngIf="form.get('email')?.hasError('required')">This field is required!
+            </mat-error>
+            <mat-error *ngIf="form.get('email')?.hasError('pattern')">Email invalid!
             </mat-error>
         </mat-form-field>
         <mat-form-field style="width:100%">
@@ -67,7 +69,8 @@
     </div>
 
     <div>
-        <button style="margin-top: 20px; float: right" color="primary" mat-raised-button type="submit" [disabled]="form.invalid">
+        <button style="margin-top: 20px; float: right" color="primary" mat-raised-button type="submit"
+            [disabled]="form.invalid">
             Create
         </button>
     </div>
