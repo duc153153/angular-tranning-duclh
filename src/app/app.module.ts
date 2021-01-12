@@ -32,7 +32,8 @@ import { DeleteComponent } from './account/delete/delete.component';
     // provider used to create fake backend,
     AccountService,
     fakeBackendProvider
-  ]
+  ],
+  entryComponents: [CreateComponent, UpdateComponent, DeleteComponent]
 })
 export class AppModule {
 }
